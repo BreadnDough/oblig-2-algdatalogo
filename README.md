@@ -35,12 +35,22 @@ I oppgave 3a så brukte vi en hjelpemetoden Node<T> finnNode(int indeks) (fra ko
 til å returnere noden med den gitte indeks/posisjon. Den gjør en letingen etter noden starter fra hode og gå mot høyre 
 ved hjelp av neste-pekere. Hvis ikke, skal letingen starte fra halen og gå mot venstre ved hjelp av forrige-pekere. I oppgave 3a så brukte
 vi metoden public T hent(int indeks) som kaller på hjelpemetoden Node<T> finnNode(int indeks) og tok i bruk et kall på indeksKontroll som er arvet fra liste.java. I oppgave 3a så brukte vi en metoden T oppdater(int indeks, T nyverdi) til erstatte 
-verdien på plass indeks med nyverdi og returnere det som lå der fra før sammmen med både en sjekk fra indeksKontroll og med melding via reuireNonNull fra objects klassen.
+verdien på plass indeks med nyverdi og returnere det som lå der fra før sammmen med både en sjekk fra indeksKontroll og med melding via reuireNonNull fra objects klassen. I oppgave 3b så brukte vi metoden Liste<T> subliste(int fra, int til) til å returnere en liste (en 
+instans av klassen DobbeltLenketListe) som inneholder verdiene innenfor det halvåpende intervallet [fra:til> i 
+lista. Det ble brukt sjekk for indeksene til fra og til med kall til fratilkontroll (hjelpemetode fra kompendium). 
+Metoden som ble kalt inne i metoden Liste<T> subliste(int fra, int til) er her private, og jeg endret
+ArrayIndexOutOfBoundsException med IndexOutOfBoundsException siden vi ikke holder på med en 
+tabell eller array, samtidig endret tablengde med ordet antall for å passe med koden.  Jeg tok i bruk metoden leggInn()
+inne i Liste<T> subliste.
 
-I oppgave 3b så brukte vi en ... til å ...
 
+I oppgave 4 så brukte metoden indeksTil til å returnere indeksen/posisjonen til verdi hvis 
+den finnes i listen og hvis den ikke finens skal det returnes med  -1. Metoden skal isteden returnere -1, uten unntakskontroll
+fordi null vil ikke være med i lista. Hvis verdi er forekommer flere ganger, så vil indeksen til den første av dem (sett fra venstre) 
+returneres. I oppgave 4 har jeg også brukt metoden inneholder til å returnere true hvis 
+lista inneholder verdien og den vil returnere false ellers. Også tok jeg i brukt kall inne i metoden inneholder.
 
-I oppgave 4 så brukte vi en ... til å ...
+metoden indeksTil som en del av koden
 
 I oppgave 5 så brukte vi en ... til å ...
 
