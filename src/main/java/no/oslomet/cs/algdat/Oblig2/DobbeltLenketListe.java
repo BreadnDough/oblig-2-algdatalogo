@@ -130,7 +130,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public boolean leggInn(T verdi) {
 
-        Objects.requireNonNull(verdi, "Ikke tillatt med null-verdier!");
+        Objects.requireNonNull(verdi, "Null-verdier er ikke tillatt!");
 
         Node<T> p = new Node<>(verdi, hale, null);
         // velger en så kalt ternary if
