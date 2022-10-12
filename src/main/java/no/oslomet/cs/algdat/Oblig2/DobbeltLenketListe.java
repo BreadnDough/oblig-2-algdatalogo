@@ -6,6 +6,7 @@ package no.oslomet.cs.algdat.Oblig2;
 
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.Objects;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -84,7 +85,29 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public DobbeltLenketListe(T[] a) {
-        throw new UnsupportedOperationException();
+
+        // tar i bruk en konstruktør for dette
+        this();
+
+        Objects.requireNonNull(a, "a er null!");
+
+        //midlertidig node for naa.
+
+        hode = hale = new Node<>(null);
+
+        for (T verdi : a)
+        {
+            if (verdi != null)
+            {
+                hale = hale.neste = new Node<>(verdi, hale, null);  // ny node bakerst
+                antall++;
+            }
+        }
+
+        // dette vil da kunne faa fjernet den midlertidige noda som jeg tok i bruk.
+
+        if (antall == 0) hode = hale = null;
+        else (hode = hode.neste).forrige = null;
     }
 
     public Liste<T> subliste(int fra, int til) {
@@ -93,13 +116,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public int antall() {
-        //returner antall
+        //returner antallet verdier i lista
         return antall;
     }
 
     @Override
     public boolean tom() {
-        // velger når den er lik 0 returner
+        // returnerer true eller false basert på om lista er tom eller ikke.
         return antall == 0;
     }
 
