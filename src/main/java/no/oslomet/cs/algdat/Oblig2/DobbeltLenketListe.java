@@ -82,6 +82,21 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                     ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
     }
 
+    private T fjernNode(Node<T> p)  // private hjelpemetode
+    {
+        if (p == hode)
+        {
+            if (antall == 1) hode = hale = null;      // kun en verdi i listen
+            else (hode = hode.neste).forrige = null;  // fjerner den første
+        }
+        else if (p == hale) (hale = hale.forrige).neste = null;  // fjerner den siste
+        else (p.forrige.neste = p.neste).forrige = p.forrige;    // fjerner p
+
+        antall--;     // en mindre i listen
+        endringer++;  // en endring
+
+        return p.verdi;
+    }
 
     public DobbeltLenketListe() {
         throw new UnsupportedOperationException();
@@ -260,7 +275,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         if (verdi == null) {
             return false;
         }
-        
+
+        for (Node<T> p = hode; p != null; p = p.neste)
+        {
+            if (p.verdi.equals(verdi))
+            {
+                fjernNode(p);   // bruker den private hjelpemetoden
+                return true;
+            }
+        }
+        return false;  // verdi ligger ikke i listen
     }
 
     @Override
