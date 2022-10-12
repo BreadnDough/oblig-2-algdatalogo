@@ -129,7 +129,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean leggInn(T verdi) {
-        throw new UnsupportedOperationException();
+        Objects.requireNonNull(verdi, "Ikke tillatt med null-verdier!");
+
     }
 
     @Override
@@ -178,7 +179,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         // verdier.
         // StringJoiner er brukt
         StringJoiner sj = new StringJoiner(", ", "[", "]");
-        for (Node<T> p = hode; p != null; p = p.neste) sj.add(p.verdi.toString());
+        for (Node<T> p = hode; p != null; p = p.neste)
+            sj.add(p.verdi.toString());
         return sj.toString();
     }
 
@@ -186,7 +188,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         // Den skal returnere en tegnstreng i omvendt rekkefølge med listens
         // verdier.
         StringJoiner sj = new StringJoiner(", ", "[", "]");
-        for (Node<T> p = hale; p != null; p = p.forrige) sj.add(p.verdi.toString());
+        for (Node<T> p = hale; p != null; p = p.forrige)
+            sj.add(p.verdi.toString());
         return sj.toString();
     }
 
