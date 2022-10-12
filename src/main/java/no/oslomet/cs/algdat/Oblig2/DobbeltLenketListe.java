@@ -97,8 +97,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return p.verdi;
     }
 
+
+    // konstruktør
     public DobbeltLenketListe() {
-        throw new UnsupportedOperationException();
+
+        hode = hale = null;
+        antall = 0;
+        endringer = 0;
+
     }
 
     public DobbeltLenketListe(T[] a) {
@@ -446,7 +452,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             if (iteratorendringer != endringer) throw
                     new ConcurrentModificationException("Listen har blitt endret!");
 
-            // Hvis vi naar fram hit, så skal next kalles og en node vil kunne fjernes
+            // denne skal bli usann etter alle if-testene har blitt passert,
+            // saa en node skal fjernes.
             fjernOK = false;
 
             // tar i bruk hjelpemetoden
