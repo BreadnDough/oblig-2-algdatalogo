@@ -437,8 +437,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         @Override
         public void remove() {
+
+            // Hvis det ikke er tillatt å kalle denne metoden
             if (!fjernOK) throw
                     new IllegalStateException("Verdien vil ikke bli fjerna!");
+
+            // Hvis endringer og iteratorendringer er forskjellige
+            if (iteratorendringer != endringer) throw
+                    new ConcurrentModificationException("Listen har blitt endret!");
+            
+
         }
 
     } // class DobbeltLenketListeIterator
