@@ -403,7 +403,15 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         }
 
         private DobbeltLenketListeIterator(int indeks) {
-            throw new UnsupportedOperationException();
+
+            // finner indeksen til noden
+            denne = finnNode(indeks);
+
+            // hvis next() kalles, skal bli true
+            fjernOK = false;
+
+            // dette vill telle for endringer
+            iteratorendringer = endringer;
         }
 
         @Override
