@@ -280,16 +280,23 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         {
             if (p.verdi.equals(verdi))
             {
-                fjernNode(p);   // bruker den private hjelpemetoden
+                // velger aa kalle opp hjelpemetoden fjernNode
+                fjernNode(p);
                 return true;
             }
         }
-        return false;  // verdi ligger ikke i listen
+        // hvis verdien ikke ligger i lsita vaar
+        return false;
     }
 
     @Override
     public T fjern(int indeks) {
 
+        // indekskontroll
+        indeksKontroll(indeks, false);
+
+        // returnerer med et kall paa to hjelpemetoder sammen.
+        return fjernNode(finnNode(indeks));
     }
 
     @Override
