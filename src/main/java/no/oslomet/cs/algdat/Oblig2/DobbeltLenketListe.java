@@ -170,9 +170,17 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public void leggInn(int indeks, T verdi) {
 
+        //tekst for null-verdier
         Objects.requireNonNull(verdi, "Null-verdier er ikke tillatt!");
 
+        //kaller for metoden.
         indeksKontroll(indeks, true);
+
+        // dette er for en tom liste
+        if (tom())
+        {
+            hode = hale = new Node<>(verdi, null, null);
+        }
     }
 
     @Override
