@@ -18,7 +18,7 @@ Laget konstruktøren DobbeltLenketListe(T[] a), og det er en dobbeltlenket
 liste som har med de samme verdiene man tar fra tabellen a. Jeg har tatt med NullPointerException (med teksten "Tabellen a er null!)for tilfeldene 
 null!" med import av object klassen med metoden reuiredNonNull.  Hvis tabellen a har kun en verdi som ikke er null (listen får da én 
 node), så vil hode og hale peke til samme node. Men om a er tom (altså lengden er 0), 
-vil det ikke bli noen noder, og dermed vil node og hale forbli null (dvs dette er en tom liste.)
+vil det ikke bli noen noder, og dermed vil node og hale forbli null (dvs dette er en tom liste.). La til konstruktør DobbeltLenketListe().
 
 I oppgave 2a så brukte vi metoden String toString() til å returnere en tegnstreng med listens 
 verdier. Altså om listainneholder tallene 1, 2 og 3, skal metoden returnere strengen 
@@ -87,6 +87,16 @@ oppgitte indeksen.  I oppgave 8d så brukte vi metoden Iterator<T> iterator(int 
 indeksen er lovlig. Inne i den metoden ble det brukt et kall etter metoden indeksKontroll() . Deretter skal den ved hjelp av 
 konstruktøren i punkt 8c kunne returnere en instans av iteratorklassen.
 
-I oppgave 9 så brukte vi en ... til å ...
+I oppgave 9 så brukte vi metoden void remove() i iteratorklassen. Den kaster en IllegalStateException hvis det ikke er tillatt 
+å kalle på metoden. Det kastes Concurrrent-ModificiationException, hvis det viser seg at endringer og iteratorendringene er
+ulike. Hvis man klarer å passere disse to testene skal fjernOK settes til usann/false, og noden rett til venstre for p
+fjernes. Hvis den som skal fjernes er eneste verdi (antall == 1), så nulles hode og hale. Hvis den siste skal 
+fjernes (denne == null), så må hale oppdateres. Hvis den første skal fjernes (denne.forrige == hode), så må hode oppdateres.
+4) Hvis en node inne i listen skal fjernes (noden denne.forrige), så må pekerne i nodene på hver side oppdateres.
+iteratorendringer plusses med 1 for hver gang dette gaar gjennom fullstendig.
 
-I oppgave 10 så brukte vi en ... til å ...
+
+I oppgave 10 så brukte vi en metoden sorter(Liste<T> liste, Comperator<? super T > c) er ment for å sortere en liste med
+bruk av comperator. Oppgaven skal løses uten hjelpestruktur og den er såkalt "på plass".
+Målet er å få metoden til å virke (at den sorterer korrekt). Også er det ment å lete etter hvilken
+orden sorteringen ender med. Foreløbig har jeg kun fått til pseudoesque kode for nå.
