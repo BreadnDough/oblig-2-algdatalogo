@@ -60,7 +60,14 @@ verdier for alle noder. Også vil forrige-peker i den første noden være null o
 den siste noden være null.
 
 
-I oppgave 6 så brukte vi en ... til å ...
+I oppgave 6 så brukte vi metoden T fjern(int indeks) til fjerne (og returnere) verdien på posisjon indeks (som først må sjekkes). 
+I oppgave 6 brukte vi også metoden boolean fjern(T verdi) til å fjerne verdi fra listen og så returnere true. 
+Hvis det finnes flere forekomster av verdier det den så vil det være at den første av dem (fra venstre) som skal fjernes. 
+Hvis verdien ikke ligger i lista så skal metoden kun returnere false. Det er ikke brukt unntakskontroll for null-verdier, og kun  returnere false siden det ikke er noen mulige null i lista. Jeg har valgt å bruke en hjelpemetode fra kompendiumet som heter T fjernNode(Node<T> p),
+dette ble brukt i den andre metoden boolean fjern(T verdi) og første metoden T fjern(int indeks). I den hjelpemetoden
+ble tilfellene( 1) den første fjernes, 2) den siste fjernes og 3) 
+en verdi mellom to andre fjernes.) tatt hensyn til. Altså alle neste- og forrige-pekere er forsåvidt jeg vet  korrekt etter 
+bruk av fjerning. Variabelen antall blir redusert og endringer økes, helt etter oppgaveteksten ønsker.
 
 I oppgave 7 så brukte vi en ... til å ...
 
