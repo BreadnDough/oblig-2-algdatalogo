@@ -65,11 +65,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     private static void fratilKontroll(int antall, int fra, int til)
     {
         // fra er negativ
+        // byttet ut arrayOutOfBoundsException med IndexOutOfBoundsException
         if (fra < 0)
             throw new IndexOutOfBoundsException
                     ("fra(" + fra + ") er negativ!");
 
         // til er utenfor tabellen
+        // byttet ut arrayOutOfBoundsException med IndexOutOfBoundsException
         if (til > antall)
             throw new IndexOutOfBoundsException
                     ("til(" + til + ") > antall(" + antall + ")");
@@ -112,7 +114,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public Liste<T> subliste(int fra, int til) {
-        throw new UnsupportedOperationException();
+
+        // dette er sjekk for intervallet
+        fratilKontroll(antall, fra, til);
+
     }
 
     @Override
@@ -130,6 +135,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public boolean leggInn(T verdi) {
 
+        // er det null-verdier?
         Objects.requireNonNull(verdi, "Null-verdier er ikke tillatt!");
 
         Node<T> p = new Node<>(verdi, hale, null);
@@ -158,7 +164,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     @Override
     public T hent(int indeks) {
 
+        // sjekk fra Liste.java
         indeksKontroll(indeks, false);
+        // returnerer med kall etter metode
         return finnNode(indeks).verdi;
 
     }
