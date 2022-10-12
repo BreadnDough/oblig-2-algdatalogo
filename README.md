@@ -2,6 +2,7 @@
 
 Denne oppgaven er en innlevering i Algoritmer og Datastrukturer. 
 Oppgaven er levert av følgende studenter:
+* Gruppe 90 Oblig 2:
 * Frederik Alexander Biltvedt, s362044, s362044@oslomet.no
 
 
