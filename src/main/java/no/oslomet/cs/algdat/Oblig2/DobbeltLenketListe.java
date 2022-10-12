@@ -445,8 +445,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             // Hvis endringer og iteratorendringer er forskjellige
             if (iteratorendringer != endringer) throw
                     new ConcurrentModificationException("Listen har blitt endret!");
-            
 
+            // Hvis vi naar fram hit, så skal next kalles og en node vil kunne fjernes
+            fjernOK = false;
+
+            // tar i bruk hjelpemetoden
+            fjernNode(denne == null ? hale : denne.forrige);
+            // legger til en endring i iteratoren
+            iteratorendringer++;
         }
 
     } // class DobbeltLenketListeIterator
