@@ -69,7 +69,13 @@ ble tilfellene( 1) den første fjernes, 2) den siste fjernes og 3)
 en verdi mellom to andre fjernes.) tatt hensyn til. Altså alle neste- og forrige-pekere er forsåvidt jeg vet  korrekt etter 
 bruk av fjerning. Variabelen antall blir redusert og endringer økes, helt etter oppgaveteksten ønsker.
 
-I oppgave 7 så brukte vi en ... til å ...
+I oppgave 7 så brukte vi metoden void nullstill() til å «tømme» listen og nulle alt slik at 
+«søppeltømmeren» kan hente alt som ikke lenger brukes. Jeg kodet ferdig hver av de to metodene
+med tidsmaaling, og fant at det var liten forskjell i effektivitet naar det kom til 
+de metodene. Første metode gjaldt å starte i hode og gå mot hale ved hjelpe pekeren neste. 
+For hver node «nulles» nodeverdien og alle nodens pekere. Til slutt settes både hode og hale til null, antall til 0 
+og endringer økes. Andre mtode er en løkke som inneholder metodekallet fjern(0) (den første noden fjernes) og 
+som går inntil listen er tom
 
 I oppgave 8 så brukte vi en ... til å ...
 
