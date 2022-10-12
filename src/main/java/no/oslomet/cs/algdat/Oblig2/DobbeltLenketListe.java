@@ -304,8 +304,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     // velger å endre null() til aa bli to kopier, den ene
     // som nullstill1(), og den andre nullstill2()
     // for tydeligheten sin skyld.
+
+    // Her er nullstill() = nullstill1()
     @Override
-    public void nullstill1() {
+    public void nullstill() {
 
         Node<T> p = hode;
 
@@ -329,11 +331,27 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         antall = 0;
         endringer++;
     }
+    /*
+
+    Dette er den andre måten å lage void nullstill() på. Jeg fikk red warnings
+    med to ulike (jeg prøvd kopiere nullstill()-mal, og kallle en for nullstill1()
+    og den andre nllstill(). Men fikk red warnings paa selves public class
+    dobbeltLenketListe.java. Så da velger jeg å holde paa vanlig
+    nullstill(). Den vanlige nullstill() er nullstill1(), altså første metode.
+
+
+    Her under er den andre metoden nullstill2(), som jeg lagde. Den ser litt
+    anderledes ut enn nullstill1() over.
+
     @Override
     public void nullstill2() {
 
+        while (antall > 0) fjern(0);
+
     }
 
+
+    */
     @Override
     public String toString() {
         // Den skal returnere en tegnstreng med listens
