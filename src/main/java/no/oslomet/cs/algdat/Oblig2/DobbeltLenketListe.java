@@ -309,6 +309,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         Node<T> p = hode;
 
+
+        // node «nulles»
+        // nodeverdien og alle nodens pekere
         while (p != null)
         {
             Node<T> q = p.neste;
@@ -318,6 +321,13 @@ public class DobbeltLenketListe<T> implements Liste<T> {
             p = q;
         }
 
+        // Til slutt settes både hode og hale til null
+        hode = hale = null;
+
+        // antall til 0
+        // og endringer økes
+        antall = 0;
+        endringer++;
     }
     @Override
     public void nullstill2() {
