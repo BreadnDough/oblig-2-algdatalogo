@@ -48,11 +48,17 @@ I oppgave 4 så brukte metoden indeksTil til å returnere indeksen/posisjonen ti
 den finnes i listen og hvis den ikke finens skal det returnes med  -1. Metoden skal isteden returnere -1, uten unntakskontroll
 fordi null vil ikke være med i lista. Hvis verdi er forekommer flere ganger, så vil indeksen til den første av dem (sett fra venstre) 
 returneres. I oppgave 4 har jeg også brukt metoden inneholder til å returnere true hvis 
-lista inneholder verdien og den vil returnere false ellers. Også tok jeg i brukt kall inne i metoden inneholder.
-
+lista inneholder verdien og den vil returnere false ellers. Også tok jeg i brukt kall inne i metoden inneholder 
 metoden indeksTil som en del av koden
 
-I oppgave 5 så brukte vi en ... til å ...
+I oppgave 5 så brukte vi metoden void leggInn(int indeks, T verdi) til å legge verdi inn i listen slik at 
+den får indeks/posisjon indeks. Negative indekser og indekser større enn antall er 
+ulovlige ( altså er indekser fra og med 0 til og med antall er lovlige). I oppgave 5 har vi gjort opp
+hvert av tilfellene 1) listen er tom, 2) verdien skal legges først, 3) verdien skal legges bakerst og 4) 
+verdien skal legges mellom to andre verdier. Jeg har sørget for at neste- og forrige-pekere skal få korrekte 
+verdier for alle noder. Også vil forrige-peker i den første noden være null og neste-peker i 
+den siste noden være null.
+
 
 I oppgave 6 så brukte vi en ... til å ...
 
