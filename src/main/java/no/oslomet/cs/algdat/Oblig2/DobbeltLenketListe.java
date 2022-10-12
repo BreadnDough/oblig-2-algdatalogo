@@ -301,11 +301,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return fjernNode(finnNode(indeks));
     }
 
+
+    // ===== Oppgave 7 =============================================
+
     // velger å endre null() til aa bli to kopier, den ene
     // som nullstill1(), og den andre nullstill2()
     // for tydeligheten sin skyld.
 
-    // Her er nullstill() = nullstill1()
+    // ===== nullstill() = nullstill1() ============================
     @Override
     public void nullstill() {
 
@@ -343,6 +346,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     Her under er den andre metoden nullstill2(), som jeg lagde. Den ser litt
     anderledes ut enn nullstill1() over.
 
+
+    // ===== nullstill(2) ============================================
+
     @Override
     public void nullstill2() {
 
@@ -350,7 +356,14 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     }
 
+    ============ Resultat av oppgave 7 ===============================
 
+    Jeg kom fram til var at det var liten forskjell i effektivitet
+    mellom nullstill1() (den heter nullstill() øverst) og
+    nullstill2() (den nederste som er inne i samme tekst som det her).
+
+
+     ===== Oppgave 7 slutt ===========================================
     */
     @Override
     public String toString() {
