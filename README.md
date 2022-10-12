@@ -77,7 +77,15 @@ For hver node «nulles» nodeverdien og alle nodens pekere. Til slutt settes bå
 og endringer økes. Andre mtode er en løkke som inneholder metodekallet fjern(0) (den første noden fjernes) og 
 som går inntil listen er tom
 
-I oppgave 8 så brukte vi en ... til å ...
+I oppgave 8a så brukte vi metoden T next() til først å sjekke om iteratorendringer er lik endringer. 
+Hvis den ikke er lik det, så skal det kastes en ConcurrentModificationException. Det er lagt til en NoSuchElementException 
+hvis det ikke er flere igjen i listen (dvs. hvis hasNext() er ikke sann/true). Forså at det skal 
+settes fjernOK til sann/true, verdien til denne returneres og denne flyttes til den neste node. I oppgave 8b så brukte vi
+metoden Iterator<T> iterator() til å returnere en instans av iteratorklassen. I oppgave 8c så brukte vi  
+konstruktøren private DobbeltLenketListeIterator(int indeks) til  å sette pekeren denne til den noden som hører til den 
+oppgitte indeksen.  I oppgave 8d så brukte vi metoden Iterator<T> iterator(int indeks) til først å sjekke at 
+indeksen er lovlig. Inne i den metoden ble det brukt et kall etter metoden indeksKontroll() . Deretter skal den ved hjelp av 
+konstruktøren i punkt 8c kunne returnere en instans av iteratorklassen.
 
 I oppgave 9 så brukte vi en ... til å ...
 
