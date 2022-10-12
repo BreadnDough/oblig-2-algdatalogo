@@ -20,8 +20,6 @@ null!" med import av object klassen med metoden reuiredNonNull.  Hvis tabellen a
 node), så vil hode og hale peke til samme node. Men om a er tom (altså lengden er 0), 
 vil det ikke bli noen noder, og dermed vil node og hale forbli null (dvs dette er en tom liste.)
 
-
-
 I oppgave 2a så brukte vi metoden String toString() til å returnere en tegnstreng med listens 
 verdier. Altså om listainneholder tallene 1, 2 og 3, skal metoden returnere strengen 
 "[1, 2, 3]" og det kommer fram "[]" hvis listen er tom. 
@@ -33,7 +31,14 @@ ved å ta i bruk forrige-pekere. Hensikten med omvendtString() er å kunne sjekk
 I oppgave 2b så brukte vi metoden boolean leggInn(T verdi) til å sjekke for null/ikke verdier som ikke skal
 tas med med to ulike tilfelder.
 
-I oppgave 3 så brukte vi en ... til å ...
+I oppgave 3a så brukte vi en hjelpemetoden Node<T> finnNode(int indeks) (fra kompendiumet) 
+til å returnere noden med den gitte indeks/posisjon. Den gjør en letingen etter noden starter fra hode og gå mot høyre 
+ved hjelp av neste-pekere. Hvis ikke, skal letingen starte fra halen og gå mot venstre ved hjelp av forrige-pekere. I oppgave 3a så brukte
+vi metoden public T hent(int indeks) som kaller på hjelpemetoden Node<T> finnNode(int indeks) og tok i bruk et kall på indeksKontroll som er arvet fra liste.java. I oppgave 3a så brukte vi en metoden T oppdater(int indeks, T nyverdi) til erstatte 
+verdien på plass indeks med nyverdi og returnere det som lå der fra før sammmen med både en sjekk fra indeksKontroll og med melding via reuireNonNull fra objects klassen.
+
+I oppgave 3b så brukte vi en ... til å ...
+
 
 I oppgave 4 så brukte vi en ... til å ...
 
