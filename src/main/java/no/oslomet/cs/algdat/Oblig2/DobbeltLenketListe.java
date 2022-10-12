@@ -437,7 +437,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
         @Override
         public void remove() {
-            throw new UnsupportedOperationException();
+            if (!fjernOK) throw
+                    new IllegalStateException("Verdien vil ikke bli fjerna!");
         }
 
     } // class DobbeltLenketListeIterator
