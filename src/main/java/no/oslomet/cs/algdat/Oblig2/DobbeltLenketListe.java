@@ -176,11 +176,33 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         //kaller for metoden.
         indeksKontroll(indeks, true);
 
-        // dette er for en tom liste
+        // naar det er for tom liste
         if (tom())
         {
             hode = hale = new Node<>(verdi, null, null);
         }
+        /// naar ny verdi legges forrest
+        else if (indeks == 0)
+        {
+            hode = hode.forrige = new Node<>(verdi, null, hode);
+        }
+        // naar ny verdi legges bakerst
+        else if (indeks == antall)
+        {
+            hale = hale.neste = new Node<>(verdi, hale, null);
+        }
+        else
+        // her skal ny verdi paa sin  indeks
+        {
+            // naa skal ny verdi legges til venstre for p noda
+            Node<T> p = finnNode(indeks);
+            p.forrige = p.forrige.neste = new Node<>(verdi, p.forrige, p);
+        }
+
+        // plusser paa en til antall
+        antall++;
+        // plusser paa en til endringer
+        endringer++;
     }
 
     @Override
