@@ -465,7 +465,26 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     } // class DobbeltLenketListeIterator
 
     public static <T> void sorter(Liste<T> liste, Comparator<? super T> c) {
-        throw new UnsupportedOperationException();
+
+        /*
+        pseudokodet:
+
+        for(int n = liste.antall(); n > 0; n--){
+            Iterator<T> iterator = liste.iterator();
+            heltallsvariabel lik 0
+
+            T minverdi er lik iterator.next();
+            loop:
+            for( int i = 1; i < n; i++){
+                T verdi = iteartor.next();
+                if ( bruke c.compareator inne i en sammenligning){
+                    m blir lik indeks, og x blir noe;
+                    }
+            }
+
+        }
+
+        */
     }
 
 } // class DobbeltLenketListe
