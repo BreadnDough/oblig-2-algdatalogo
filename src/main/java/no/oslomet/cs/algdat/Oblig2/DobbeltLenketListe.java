@@ -256,12 +256,16 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean fjern(T verdi) {
-        throw new UnsupportedOperationException();
+        // nullverdier skal ikke forekomme i lista
+        if (verdi == null) {
+            return false;
+        }
+        
     }
 
     @Override
     public T fjern(int indeks) {
-        throw new UnsupportedOperationException();
+
     }
 
     @Override
