@@ -62,6 +62,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return p;
     }
 
+    //hjelpemetode
     private static void fratilKontroll(int antall, int fra, int til)
     {
         // fra er negativ
@@ -82,6 +83,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                     ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
     }
 
+    //hjelpemetode
     private T fjernNode(Node<T> p)  // private hjelpemetode
     {
         if (p == hode)
@@ -285,7 +287,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
                 return true;
             }
         }
-        // hvis verdien ikke ligger i lsita vaar
+        // i tilfellet verdien ikke ligger i lista vaar
         return false;
     }
 
@@ -299,9 +301,27 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         return fjernNode(finnNode(indeks));
     }
 
+    // velger å endre null() til aa bli to kopier, den ene
+    // som nullstill1(), og den andre nullstill2()
+    // for tydeligheten sin skyld.
     @Override
-    public void nullstill() {
-        throw new UnsupportedOperationException();
+    public void nullstill1() {
+
+        Node<T> p = hode;
+
+        while (p != null)
+        {
+            Node<T> q = p.neste;
+            p.verdi = null;
+            p.forrige = null;
+            p.neste = null;
+            p = q;
+        }
+
+    }
+    @Override
+    public void nullstill2() {
+
     }
 
     @Override
