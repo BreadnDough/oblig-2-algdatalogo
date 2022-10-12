@@ -174,12 +174,19 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException();
+        // Den skal returnere en tegnstreng med listens
+        // verdier.
+        // StringJoiner er brukt
+        StringJoiner sj = new StringJoiner(", ", "[", "]");
+        for (Node<T> p = hode; p != null; p = p.neste) sj.add(p.verdi.toString());
+        return sj.toString();
     }
 
     public String omvendtString() {
+        // Den skal returnere en tegnstreng i omvendt rekkefølge med listens
+        // verdier.
         StringJoiner sj = new StringJoiner(", ", "[", "]");
-        for (Node<T> p = hode; p != null; p = p.neste) sj.add(p.verdi.toString());
+        for (Node<T> p = hale; p != null; p = p.forrige) sj.add(p.verdi.toString());
         return sj.toString();
     }
 
