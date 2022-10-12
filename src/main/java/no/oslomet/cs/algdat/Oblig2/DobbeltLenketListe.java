@@ -127,6 +127,7 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         // velge å hente de verdiene for mitt halvåpnede intervall [fra:til>
         for (int i = fra; i < til; i++)
         {
+            //kaller på metoden leggInn
             liste.leggInn(p.verdi);
             p = p.neste;
         }
@@ -168,7 +169,10 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public void leggInn(int indeks, T verdi) {
-        throw new UnsupportedOperationException();
+
+        Objects.requireNonNull(verdi, "Null-verdier er ikke tillatt!");
+
+        indeksKontroll(indeks, true);
     }
 
     @Override
