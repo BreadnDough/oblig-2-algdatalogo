@@ -118,6 +118,21 @@ public class DobbeltLenketListe<T> implements Liste<T> {
         // dette er sjekk for intervallet
         fratilKontroll(antall, fra, til);
 
+        // lager en ny liste
+        DobbeltLenketListe<T> liste = new DobbeltLenketListe<>();
+
+        // fant fram til  noden med en indeks som er lik fra i dette tilfeldet
+        Node<T> p = finnNode(fra);
+
+        // velge å hente de verdiene for mitt halvåpnede intervall [fra:til>
+        for (int i = fra; i < til; i++)
+        {
+            liste.leggInn(p.verdi);
+            p = p.neste;
+        }
+
+        return liste;
+
     }
 
     @Override
