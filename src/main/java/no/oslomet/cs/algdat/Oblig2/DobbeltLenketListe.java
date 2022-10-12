@@ -62,15 +62,18 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     private static void fratilKontroll(int antall, int fra, int til)
     {
-        if (fra < 0)                                  // fra er negativ
+        // fra er negativ
+        if (fra < 0)
             throw new IndexOutOfBoundsException
                     ("fra(" + fra + ") er negativ!");
 
-        if (til > antall)                             // til er utenfor tabellen
+        // til er utenfor tabellen
+        if (til > antall)
             throw new IndexOutOfBoundsException
                     ("til(" + til + ") > antall(" + antall + ")");
 
-        if (fra > til)                                // fra er større enn til
+        // fra er større enn til
+        if (fra > til)
             throw new IllegalArgumentException
                     ("fra(" + fra + ") > til(" + til + ") - illegalt intervall!");
     }
@@ -96,7 +99,8 @@ public class DobbeltLenketListe<T> implements Liste<T> {
 
     @Override
     public boolean tom() {
-        throw new UnsupportedOperationException();
+        // velger når den er lik 0 returner
+        return antall == 0;
     }
 
     @Override
