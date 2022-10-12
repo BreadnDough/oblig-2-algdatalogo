@@ -7,6 +7,7 @@ package no.oslomet.cs.algdat.Oblig2;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 
 public class DobbeltLenketListe<T> implements Liste<T> {
@@ -177,7 +178,9 @@ public class DobbeltLenketListe<T> implements Liste<T> {
     }
 
     public String omvendtString() {
-        throw new UnsupportedOperationException();
+        StringJoiner sj = new StringJoiner(", ", "[", "]");
+        for (Node<T> p = hode; p != null; p = p.neste) sj.add(p.verdi.toString());
+        return sj.toString();
     }
 
     @Override
